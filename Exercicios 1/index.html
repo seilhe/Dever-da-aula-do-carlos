@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+<script>
+  /* function calcular()  {
+             Obtém o valor do input
+            var entrada = document.getElementById('entrada').value;
+            var numero = parseInt(entrada);
+
+             Verifica se o valor inserido é um número válido
+            if (isNaN(numero)) {
+                alert('Por favor, insira um número válido.');
+                return;
+            }
+
+             Calcula o antecessor e o sucessor
+            var antecessor = numero - 1;
+            var sucessor = numero + 1;
+
+             Exibe os resultados
+            document.getElementById('resultado').innerHTML = `
+                <p>O antecessor de ${numero} é ${antecessor}.</p>
+                <p>O sucessor de ${numero} é ${sucessor}.</p>
+            `;
+        }
+            */
+
+    function calcular(){
+        num = document.formulario.entrada.value;
+        num = Number(num);
+        sucessor = num + 1;
+        antecessor = num - 1;
+        document.formulario.Sucessor.value = sucessor;
+        document.formulario.Antecessor.value = antecessor;
+    }
+</script>
+
+<body style="color: rgb(25, 0, 255); font-family: Arial; font-weight: bold;">
+    <form name="formulario">                        
+ <h1 style="text-align: center;">Exercicio 1 - Sucessor e Antecessor</h1>
+
+<p>Entre com valor
+    <input style="font-weight: bold;" type="text" name="entrada">
+    <input type="button" value="Mostrar" onclick="calcular()">
+    </p>
+
+<p>
+    <input style="font-weight: bold;" type="text" name="Antecessor" disabled>
+</p>
+<p>
+    <input style="font-weight: bold;" type="text" name="Sucessor" disabled>
+</p>
+</body>
+</html>
+
