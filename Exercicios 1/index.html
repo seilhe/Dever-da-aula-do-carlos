@@ -4,56 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio 1</title>
+    <style>
+      
+        body {
+            color: rgb(0, 0, 0);
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            background-image: linear-gradient(to top,rgba(0, 0, 0, 0.76),rgb(255, 255, 255));
+            height: 100vh;
+        }
+        input {
+            font-weight: bold;
+        }
+        h1 {
+            text-align: left;
+        }
+    </style>
 </head>
-<script>
-  /* function calcular()  {
-             Obtém o valor do input
+<body>
+    <h1>Exercicio 1 - Sucessor e Antecessor</h1>
+    <form name="formulario">                        
+        <p>
+            Entre com valor
+            <input type="text" name="entrada" id="entrada">
+            <input type="button" id="botao" value="Mostrar" onclick="calcular()">
+        </p>
+        <p>
+            Antecessor: <input type="text" name="Antecessor" id="antecessor" disabled>
+        </p>
+        <p>
+            Sucessor: <input type="text" name="Sucessor" id="sucessor" disabled>
+        </p>
+    </form>
+
+    <script>
+        function calcular() {
+            var botao = document.getElementById('botao');
             var entrada = document.getElementById('entrada').value;
             var numero = parseInt(entrada);
 
-             Verifica se o valor inserido é um número válido
-            if (isNaN(numero)) {
-                alert('Por favor, insira um número válido.');
-                return;
+            if (botao.value == "Mostrar") {
+
+                 antecessor = numero - 1;
+                 sucessor = numero + 1;
+
+                document.getElementById('antecessor').value = antecessor;
+                document.getElementById('sucessor').value = sucessor;
+                botao.value = "Limpar";
+            } else {
+                
+                document.getElementById('entrada').value = '';
+                document.getElementById('antecessor').value = '';
+                document.getElementById('sucessor').value = '';
+                botao.value = "Mostrar";
             }
-
-             Calcula o antecessor e o sucessor
-            var antecessor = numero - 1;
-            var sucessor = numero + 1;
-
-             Exibe os resultados
-            document.getElementById('resultado').innerHTML = `
-                <p>O antecessor de ${numero} é ${antecessor}.</p>
-                <p>O sucessor de ${numero} é ${sucessor}.</p>
-            `;
         }
-            */
-
-    function calcular(){
-        num = document.formulario.entrada.value;
-        num = Number(num);
-        sucessor = num + 1;
-        antecessor = num - 1;
-        document.formulario.Sucessor.value = sucessor;
-        document.formulario.Antecessor.value = antecessor;
-    }
-</script>
-
-<body style="color: rgb(25, 0, 255); font-family: Arial; font-weight: bold;">
-    <form name="formulario">                        
- <h1 style="text-align: center;">Exercicio 1 - Sucessor e Antecessor</h1>
-
-<p>Entre com valor
-    <input style="font-weight: bold;" type="text" name="entrada">
-    <input type="button" value="Mostrar" onclick="calcular()">
-    </p>
-
-<p>
-    <input style="font-weight: bold;" type="text" name="Antecessor" disabled>
-</p>
-<p>
-    <input style="font-weight: bold;" type="text" name="Sucessor" disabled>
-</p>
+    </script>
 </body>
 </html>
-
